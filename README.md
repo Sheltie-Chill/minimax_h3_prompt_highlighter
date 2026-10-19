@@ -2,6 +2,8 @@
 
 Live syntax highlighting for [Wan2GP (WanGP)](https://github.com/deepbeepmeep/Wan2GP) prompt boxes when using **MiniMax H3** models. Structure your prompts visually: sections, subjects, shots, timestamps, dialogue blocks and commands are all color-coded as you type.
 
+<img width="802" height="629" alt="image" src="https://github.com/user-attachments/assets/45f61b89-9bea-482d-86c7-de13098d4fad" />
+
 ## Features
 
 - **Live highlighting** — real-time color coding of the MiniMax H3 prompt structure in the main prompt textarea *and* the wizard:
@@ -16,8 +18,6 @@ Live syntax highlighting for [Wan2GP (WanGP)](https://github.com/deepbeepmeep/Wa
   - Dialogue blocks (`<d>…</d>`) including `(Sx)` speakers
   - `<scenetrans>` / `<cutoff>` tags
   - Retention modes
-- **Automatic chip backgrounds** — every highlighted token gets a subtle background tint derived from its text color (legible on both light and dark themes)
-- **Accurate caret & selection** — a custom text layer keeps the caret and mouse selection pixel-aligned even with styled overlays
 - **Opt-in toggle + color customization** — a controls bar under the prompt with an enable checkbox and a *Customize colors* button; the palette is persisted in the browser
 - **Model-aware** — highlighting is active only for MiniMax H3 models; the controls bar hides itself otherwise
 
