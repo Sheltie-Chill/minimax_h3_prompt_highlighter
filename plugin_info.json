@@ -1,7 +1,7 @@
 {
   "name": "MiniMax H3 Prompt Highlighter",
   "author": "Sheltie Chill",
-  "version": "1.6.10",
+  "version": "1.6.11",
   "description": "Live syntax highlighting in the prompt box for MiniMax H3 structure: sections, per-number Subject markers, [Shot N], At MM:SS.mmm, <Picture/Video/Audio N>, dialogue blocks, sliding-window commands and retention modes.",
   "date": "2026-10-19",
   "wan2gp_version": "",

@@ -157,8 +157,9 @@ JS_CODE = r"""
       ".h3hl-ta{" +
       "position:relative;z-index:1;" +
       "background:transparent!important;color:rgba(0,0,0,0)!important;" +
-      "caret-color:#000000!important;" +
+      "caret-color:var(--body-text-color,#000000)!important;" +
       "}" +
+      ".dark .h3hl-ta{caret-color:#ffffff!important;}" +
       ".h3hl-ta::placeholder{color:transparent!important;}" +
       ".h3hl-ta::selection{background:transparent!important;color:rgba(0,0,0,0)!important;}" +
       ".h3hl-layer .h3hl-sel{background:rgba(59,130,246,0.32);border-radius:2px;}" +
@@ -452,11 +453,22 @@ JS_CODE = r"""
     var onValueEvent = function () {
       render(ta);
     };
+    var onSelectionChange = function () {
+      if (ta._h3hlSelRaf) return;
+      if (document.activeElement !== ta) return;
+      ta._h3hlSelRaf = requestAnimationFrame(function () {
+        ta._h3hlSelRaf = null;
+        if (ta._h3hlBound !== "1") return;
+        render(ta);
+      });
+    };
     ta.addEventListener("input", onValueEvent);
     ta.addEventListener("change", onValueEvent);
     ta.addEventListener("keyup", onValueEvent);
     ta.addEventListener("select", onValueEvent);
     ta.addEventListener("mouseup", onValueEvent);
+    ta.addEventListener("selectionchange", onSelectionChange);
+    document.addEventListener("selectionchange", onSelectionChange);
     ta.addEventListener("scroll", function () {
       if (!ta._h3hlLayer) return;
       ta._h3hlLayer.scrollTop = ta.scrollTop;
